@@ -7,8 +7,38 @@
   }
 }
 
-// Breakpoints
-@mixin large-screens {
+// Breakpoints. Use by inlcuding in the selector styles.
+@mixin super-small-device {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin extra-small-device {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin small-device {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin medium-device {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin large-device {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin extra-large-device {
   @media only screen and (max-width: 1600px) {
     @content;
   }
