@@ -20,20 +20,30 @@
     <div id = "site-wrapper">
         <div id = "site-container">
 
-            <div id = "header-wrapper">
-                <div id = "header-container">
-                    <header>
-                        <div id = "logo-container">
-                        </div>
+            <header id = "site-header" title = "Site Header">
+                <div id = "site-header-container">
+                    <figure id = "logo-container">
+                    </figure>
 
-                        <div id = "nav-wrapper">
-                            <nav>
-                            </nav>
+                    <nav id = "site-nav" title = "Main Navigation">
+                        <div id = "nav-container">
                         </div>
-
-                    </header>
+                    </nav>
                 </div>
-            </div>
+            </header>
 
-            <div id = "content-wrapper">
-                <div id = "content-container">
+            <main id = "site-content"  role = "main" class = "<?php
+
+            if (is_page()) {
+                echo 'page-wrapper';
+            }
+            elseif (is_single()) {
+                echo 'post-wrapper';
+            }
+            elseif (is_archive() || (is_front_page() && is_home())) {
+                echo 'post-excerpts-wrapper';
+            }
+            else {
+                echo 'content-wrapper';
+            }
+            ?>">
